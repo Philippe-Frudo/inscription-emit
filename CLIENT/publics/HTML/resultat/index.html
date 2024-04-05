@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RESULTAT</title>
+
+    <!-- ================= LINK CSS ================= -->
+    <link rel="stylesheet" href="../../CSS/default/style.css">
+    <link rel="stylesheet" href="../../CSS/resultat/style.css"> 
+    <!-- ================= LINK CSS ================= -->
+
+</head>
+<body>
+
+    <!--===================== DEBUT HEADER NAV ==================-->
+    <header class="header">
+        <div class="logo">
+           <a href="#">
+            <img src="../../images/logoEMIT.jpg" alt="EMIT">
+           </a>
+        </div>
+        <nav class="nav">
+            <a href="../inscription/index.html" class="inscription">inscription</a>
+            <a href="../resultat/index.html" class="resultat active-a">resultat</a>
+            <a href="../contact/index.html" class="contact">contact</a>
+        </nav>
+        <div class="btnNav">
+            <img src="../../icon/menuBar.ico" alt="BOUTTON MENU">
+        </div>
+    </header>
+    <!--====================== FIN HEADER NAV ========================-->
+
+    <main class="padding">
+
+         <!-- ============================ DEBUT SECTION ===========================-->
+        <section class="container">
+           <div class="containt-chercher">
+                <div class="title">
+                    <h1>Resultat</h1>
+                </div>
+                <div>
+                    <form action="#">
+                        <div class="parcours">
+                            <select name="parcours">
+                                <option value="DAII">DAII</option>
+                                <option value="RPM">RPM</option>
+                                <option value="AES">AES</option>
+                            </select>
+                        </div>
+                        <input type="text" class="chercher" placeholder="Chercher nom ou prenom">
+                    </form>
+                </div>
+           </div>
+           <div class="containt-resultat">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prenom</th>
+                            <th>Mention</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Frudo</td>
+                            <td>Philippe</td>
+                            <td>DAII</td>
+                        </tr>
+                        <tr>
+                            <td>Frudo</td>
+                            <td>Philippe</td>
+                            <td>DAII</td>
+                        </tr>
+                    </tbody>
+                </table>
+           </div>
+
+        </section>
+        <!-- ============================ FIN SECTION ===========================-->
+
+    </main>
+
+
+    <!-- =========================== DEBUT DU FOOTER ===========================-->
+    <footer class="padding">
+        <div class="article">
+            <article>
+                <h2>Accueil</h2>
+                <ul>
+                    <li>
+                        <a href="#">Actualites</a>
+                    </li>
+                    <li>
+                        <a href="#">Prix obtenus</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Formation</h2>
+                <ul>
+                    <li>
+                        <a href="#">Nos formations</a>
+                    </li>
+                    <li>
+                        <a href="#">Emploi du temps</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Personnel</h2>
+                <ul>
+                    <li>
+                        <a href="#">Enseignants</a>
+                    </li>
+                    <li>
+                        <a href="#">Personnel Administratif </a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Partenaire</h2>
+                <ul>
+                    <li>
+                        <a href="#">Laboratoires de recherche</a>
+                    </li>
+                    <li>
+                        <a href="#">Ecole et Univercites</a>
+                    </li>
+                    <li>
+                        <a href="#">Entreprise</a>
+                    </li><li>
+                        <a href="#">Organigrames publiques</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Recherche</h2>
+                <ul>
+                    <li>
+                        <a href="#">Publique Scientifique</a>
+                    </li>
+                    <li>
+                        <a href="#">Memoires et theses</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Vie estudiantine</h2>
+                <ul>
+                    <li>
+                        <a href="#">Activites</a>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </footer>
+    <div class="endFoot">
+        &copy; Ecole de Management et d'Innovation Technologique-2024
+    </div>
+    <!-- =========================== FIN DU FOOTER ===========================-->
+
+
+
+    <!-- ============= DEBUT DU SCRIPT JS ====================== -->
+    <script>
+        document.querySelector(".resultat").classList.add("active-a");
+    </script>
+    <script src="../../JS/default/script.js" type="text/javascript"></script>
+    <script src="../../JS/resultat/script.js" type="text/javascript"></script> 
+     <!-- ==================== FIN DU SCRIPT JS ===================== -->
+     
+</body>
+</html>

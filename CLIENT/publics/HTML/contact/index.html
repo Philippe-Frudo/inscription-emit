@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT</title>
+
+    <!-- ================= LINK CSS ================= -->
+    <link rel="stylesheet" href="../../CSS/default/style.css">
+    <link rel="stylesheet" href="../../CSS/contact/style.css">
+    <!-- ================= LINK CSS ================= -->
+
+</head>
+<body>
+
+    <!--===================== DEBUT HEADER NAV ==================-->
+    <header class="header">
+        <div class="logo">
+           <a href="#">
+            <img src="../../images/logoEMIT.jpg" alt="EMIT">
+           </a>
+        </div>
+        <nav class="nav">
+            <a href="../inscription/index.html" class="inscription">inscription</a>
+            <a href="../resultat/index.html" class="resultat">resultat</a>
+            <a href="../contact/index.html" class="contact active-a ">contact</a>
+        </nav>
+        <div class="btnNav">
+            <img src="../../icon/menuBar.ico" alt="BOUTTON MENU">
+        </div>
+    </header>
+    <!--====================== FIN HEADER NAV ========================-->
+
+
+    <main class="padding">
+
+         <!-- ============================ DEBUT SECTION ===========================-->
+        <section class="container">
+
+            <!-- ================DEBUT CONTACT===================== -->
+            <div class="contact-containt">
+                <div class="description">
+                    <div class="h-title">
+                        <h1>Contact</h1>
+                        <p>Nous pouvons toujours vous aider</p>
+                    </div>
+                    <div>
+                        <form action="#" method="POST">
+                            <input type="text" name="nomeContact" placeholder="Nom">
+                            <input type="email" name="emailContact" placeholder="E-mail" required>
+                            <input type="text" name="telContact" placeholder="Telephone" required>
+                            <textarea name="msg" id="msg" placeholder="Entrer votre message...." rows="6" required></textarea>
+                            <input type="submit" class="btn" value="Envoyer">
+                        </form>
+                    </div>
+                    <div>
+                        <p>directeuremit@gmail.com</p>
+                        <p>Telephone 038 69 226 67</p>
+                    </div>
+                </div>
+
+                <div class="cartLocalisation">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14852.482003199038!2d47.1099472!3d-21.463788!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x21e7bf3a518ca787%3A0x60d947c35b7c1085!2sEMIT%20(Ecole%20de%20Management%20et%20d&#39;Innovation%20Technologique)!5e0!3m2!1sfr!2smg!4v1709409668517!5m2!1sfr!2smg" style="border:0;" allowfullscreen=""></iframe>
+                    <!-- <iframe src="../../HTML/resultat/index.html" frameborder="0"></iframe> -->
+                </div>
+           </div>
+            <!-- ================FIN CONTACT===================== -->
+
+        </section>
+        <!-- ============================ FIN SECTION ===========================-->
+
+    </main>
+
+
+    <!-- =========================== DEBUT DU FOOTER ===========================-->
+    <footer class="padding">
+        <div class="article">
+            <article>
+                <h2>Accueil</h2>
+                <ul>
+                    <li>
+                        <a href="#">Actualites</a>
+                    </li>
+                    <li>
+                        <a href="#">Prix obtenus</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Formation</h2>
+                <ul>
+                    <li>
+                        <a href="#">Nos formations</a>
+                    </li>
+                    <li>
+                        <a href="#">Emploi du temps</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Personnel</h2>
+                <ul>
+                    <li>
+                        <a href="#">Enseignants</a>
+                    </li>
+                    <li>
+                        <a href="#">Personnel Administratif </a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Partenaire</h2>
+                <ul>
+                    <li>
+                        <a href="#">Laboratoires de recherche</a>
+                    </li>
+                    <li>
+                        <a href="#">Ecole et Univercites</a>
+                    </li>
+                    <li>
+                        <a href="#">Entreprise</a>
+                    </li><li>
+                        <a href="#">Organigrames publiques</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Recherche</h2>
+                <ul>
+                    <li>
+                        <a href="#">Publique Scientifique</a>
+                    </li>
+                    <li>
+                        <a href="#">Memoires et theses</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Vie estudiantine</h2>
+                <ul>
+                    <li>
+                        <a href="#">Activites</a>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </footer>
+    <div class="endFoot">
+        &copy; Ecole de Management et d'Innovation Technologique-2024
+    </div>
+    <!-- =========================== FIN DU FOOTER ===========================-->
+
+
+    <!-- ============= DEBUT DU SCRIPT JS ====================== -->
+    <script>
+        document.querySelector(".contact").classList.add("active-a");
+    </script>
+    <script src="../../JS/default/script.js" type="text/javascript"></script>
+    <script src="../../JS/contact/script.js" type="text/javascript"></script> 
+     <!-- ==================== FIN DU SCRIPT JS ===================== -->
+     
+</body>
+</html>

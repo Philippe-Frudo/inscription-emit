@@ -1,0 +1,252 @@
+.article  {
+    width: 100%;
+    padding-top: 0.5rem;
+    display: flex;
+    grid-template-columns: repeat(3, 1fr);
+    align-content: flex-start;
+    justify-content: space-around;
+    /* gap: 1rem; */
+}
+
+.profilUConnect{
+    columns: 2;
+}
+
+.article .photo {
+    width: auto;
+}
+
+.article .photo img{
+    margin-bottom: 0.5rem;
+    width: 250px;
+    /* border: 1px solid;
+     */
+     box-shadow: 0 0 1px #000;
+    display: block;
+}
+
+.article .articleDesc {
+    max-width: 300px;
+    width: 100%;
+}
+
+.article .articleDesc div span{
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.article .articleDesc div p{
+    border-radius: 5px;
+    margin: 0;
+    margin-bottom: 1.2rem;
+    padding: 0.8rem;
+    min-width: 100px;
+    /* background-color: aquamarine; */
+    font-size: 1.2rem;
+    box-shadow: 0 0 2px rgb(0, 0, 0, 0.8);
+}
+
+.autreUtilisateur{
+    position: relative;
+    height: 70vh;
+    box-sizing: 0 0 2px #000;
+    padding: 1rem;
+    margin: 0;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.autreUtilisateur table thead tr th{
+    overflow-wrap: break-word;
+    padding: 1rem 0.5rem;
+}
+
+.autreUtilisateur table tbody tr td{
+    overflow-wrap: break-word;
+    /* max-width: 150px; */
+    margin: -10px 0;
+}
+ 
+table tbody tr td img{
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+}
+.autreUtilisateurtable table thead tr th:nth-of-type(7), 
+.autreUtilisateurtable table tbody tr td:nth-of-type(7){
+    width: 100px;
+}
+
+/* table thead tr th:nth-of-type(2), 
+table tbody tr td:nth-of-type(2){
+    max-width: auto;
+    /* visibility: hidden;
+    
+} */
+
+.autreUtilisateur table thead{
+    position: sticky;
+    left: 0; right: 0; top: 0;
+}
+
+.cardModifieUtilisateur, .cardU {
+    padding: 4rem 3rem 3rem;
+    box-shadow:  0 0 20px rgb(0, 0, 0, 0.7);
+    position: absolute;
+    top: -100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgb(255, 255, 255);
+    transition: top 0.5s;
+}
+
+.desc-modify div{
+    margin-bottom: 1.5rem;
+}
+
+.cardModifieUtilisateur .photo {
+    margin-bottom: 2rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.content-modify {
+    margin-top: 20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* .cardModifieUtilisateur-desc {
+    
+    /* display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem; 
+} */
+
+label span{
+    text-transform: capitalize;
+    font-weight: 600;
+}
+
+ input, select{
+    width: 300px;
+    border-radius: 5px;
+    margin-top: 0.5rem;
+    outline: none;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1rem;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.7);
+}
+
+
+button.btnModifierConfirme, .btnModifier{
+   width: 100%;
+   margin-top: 1rem;
+   text-align: center;
+}
+
+.autreUtilisateur table{
+    z-index: -1;
+}
+
+
+/* ====================CARD ADD USER====================== */
+
+.cardU{
+    min-width: 700px;
+    padding:0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+.cardU h3{
+    position: sticky;
+    background: #5ea4e6;
+    width: 100%;
+    text-align: center;
+    padding: 0.8rem 0;
+    margin-top: -10px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.cardU input:not(input[type="radio"]), .cardU select, .cardU span, label{
+    min-width: 350px;
+    font-size: 1.2rem;
+    margin: 2px 0;
+}
+
+.importIMG, .importIMGOK{
+    position: relative;
+    padding: 0;
+    margin-bottom: 0.5rem;
+    width: 100%;
+    max-width: 100px;
+    height: 100%;
+    min-height: 150px;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    background: linear-gradient(rgba(104, 104, 104, 0.3),rgba(104, 104, 104, 0.3),rgba(104, 104, 104, 0.3)), 
+                              url("../../images/importIMG.jpg");
+    background-repeat: no-repeat;
+    background-position: center;  
+    cursor: pointer;  
+}
+.importIMGOK{
+    background: linear-gradient(rgba(104, 104, 104, 0.3),rgba(104, 104, 104, 0.3),rgba(104, 104, 104, 0.3)), 
+    url("../../images/user.ico");
+    background-repeat: no-repeat;
+    width: auto;
+    max-width: 100px;
+    height: 100%;
+    min-height: 150px;
+}
+
+.importIMG span{
+    position: absolute;
+    top: 10px; right: 10px;
+    font-size: 30px;
+    border-radius: 50%;
+    padding: 5px;
+    color: red;
+    transition: 0.2s;
+    z-index: -1;
+    display: none;
+}
+
+.importIMG img{
+    align-items: center;
+    align-content: center;
+    text-align: center;
+    width: 100px;
+    max-width: 100px;
+    display: none;
+}
+.importIMG span.activeput, .importIMG img.activeput{
+    display: block;
+}
+
+.importIMG span:hover{
+    background: rgb(255, 0, 0, 0.5);
+    transform: scale(1.1);
+}
+
+.btnAjoutU{
+    margin: 1rem 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+}
+.btnAjoutU .AjoutU{
+
+    width: 100%;
+}

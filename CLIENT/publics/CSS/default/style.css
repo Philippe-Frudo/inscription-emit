@@ -1,0 +1,329 @@
+/* ::-webkit-scrollbar{
+    width: 0.6rem;
+    border-radius: 0.5rem;
+    background-color: hsl(0, 0, 10%);  
+}
+
+::-webkit-scrollbar-thumb{
+    border-radius: 0.5rem;
+    background-color: hsl(0, 0, 20%);  
+} */
+
+html{
+    scroll-behavior: smooth;
+    /* scroll-snap-type: none; */
+}
+
+:root{
+    --body-bg: rgb(255,255,255, 0.8);
+    --containt-bg: #fff;
+    --padding: 0.8rem 0.5rem;
+    --margin: 1.1rem 0;
+    --title-size: 1.2rem;
+    --title-color: rgb(0, 0, 0, 0.5);
+    --input-size: 1.1rem;
+    --font-weight-title: 700;
+    --font-weight-second: 600;
+    --text-capitalize: capitalize;
+    --text-uppercaze: capitalize;
+    --boxShadow: 0 3px 5px rgb(0, 0, 0, 0.5);
+
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+
+h2{
+    text-transform: uppercase;
+    font-size: 1rem;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 2px solid var(--title-color);
+}
+.padding{
+    padding: 0 10%;
+}
+
+body{
+    font-family: sans-serif;
+    background: var(--body-bg);
+    padding-top: 6rem;
+}
+
+.container{
+    min-height: calc(50vh - (85px + 1rem));
+}
+
+.containt-chercher{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    
+}
+.containt-chercher .title {
+    text-transform: capitalize;
+    width: 50%;
+    flex: 1;   
+}
+
+
+#msgInscri{
+    padding: 0.7rem 0.5rem;
+    border-radius: 5px;
+    background: rgba(255, 0, 0, 0.6);
+    width: 80%;
+    font-size: 1.1rem;
+    color: #fff;
+    margin: 0.5rem auto;
+    /* font-weight: 600; */
+    text-align: center;
+    display: none;
+    position: fixed;
+    top: 20%; left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+main {
+    margin: 50px 0;
+}
+
+.endFoot{
+    text-align: center; padding: 10px; background: rgb(23, 23, 207); color: #fff;
+}
+
+.container input:not(input[type="radio"],input[type="submit"]), select, label,textarea {
+    position: relative;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px rgb(0, 0, 0, 0.4);
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 200px;
+    font-size: var(--input-size);
+    overflow: hidden;
+}
+
+.container div  span{
+    font-weight: 500;
+    font-size: var(--input-size);
+    margin-bottom: 5px;
+
+}
+
+
+/* ======================  HEADER   ====================== */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position:fixed;
+    top: 0; right: 0; left: 0;
+    padding: 0 10%;
+    box-shadow: var(--boxShadow);
+    background: var(--containt-bg);
+    z-index: 1000;
+}
+.logo{
+   overflow: hidden;
+   object-fit: cover;
+   object-position: top 0 right 0 bottom 0 left 0;
+}
+.logo img{
+    width: 80px;
+    height: auto;
+}
+.header nav{
+    display: flex;
+    flex-direction: column;
+    background: var(--containt-bg);
+    position: absolute;
+    top: -300%; right: 0; left: 0;
+    box-shadow: var(--boxShadow);
+    padding: 1rem;
+    transition: 0.4s;
+}
+.header nav a{
+    position: relative;
+    text-transform: var(--text-capitalize);
+    font-size: var(--title-size);
+    font-weight: var(--font-weight-second);
+    display: block;
+    width: 100%;
+    margin: 0.5rem ;
+    padding-bottom: 0.5rem;
+}
+
+
+.header nav.active-nav{
+    transition: 0.4s;
+    top: 0;
+}
+
+.header nav a::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--title-color);
+    transition: width 0.4;
+}
+
+.btnNav{
+    cursor: pointer;
+    z-index: 1001;
+}
+/* ========================HEDEAR END=========================== */
+
+/* ========================DEBUT FOOTER=========================== */
+
+footer{
+    background: rgb(0, 0, 0, 0.1);
+}
+
+.article{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, auto));
+    justify-content:space-between;
+    padding: 1rem 0;
+    width: 100%;
+}
+footer article{
+    padding: 1rem  0;
+}
+footer ul li{
+    padding: 8px 0;
+}
+footer  a{
+    color: var(--title-color);
+    font-size: 1.1rem;
+    position: relative;
+    right: auto;
+    transition: 0.3s;
+}
+footer  a:hover{
+    color: #fff;
+    right: -5px;
+
+}
+
+.btn{
+    display: block;
+    display: block;
+    position: relative;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+    padding: 20px 30px;
+    font-size: var(--input-size);
+    display: inline-block;
+    width: 80%;
+    font-weight: var(--font-weight-second);
+    background: rgb(77, 103, 184, 0.9);
+    transition: 0.2s;
+    color: #fff;
+    cursor: pointer;
+    text-align: center;
+}
+
+.submit{
+    width: 100%;
+    text-align: center;
+}
+.btnSubmit:hover{
+    transform: scale(1.005);    
+    background: rgb(77, 103, 184);
+    box-shadow: 0 1px 2px rgb(77, 103, 184);
+}
+
+.btnReset{
+    margin-top: 1rem;
+    background: rgba(116, 116, 116, 0.5);
+}
+.btnReset:hover{
+    transform: scale(1.005);    
+    background: rgba(116, 116, 116, 0.8);
+    box-shadow: 0 1px 2px rgba(116, 116, 116, 0.8);
+}
+
+.endFoot{
+    text-align: center; 
+    padding: 10px; 
+    background: var(--title-color); 
+    color: #fff;
+}
+/* ========================FIN FOOTER=========================== */
+
+
+.header nav a:hover::after{
+    width: 100%;
+} 
+
+.header nav a.active-a::after{
+    transition: 0.3s ease-in-out;
+    width: 50%;
+}
+
+
+/* form div input:focus{
+    outline: "2px solid blue";   
+} */
+
+.msgErrorChamp{
+    color: red;
+    opacity: 0;
+}
+
+.divAlert{
+    background-color: rgb(177, 57, 57);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+
+.msgErreurAjout{
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    font-size: 1.2rem;
+}
+
+
+.removemsgErreurAjout{
+    font-size: 1.5rem;
+    padding: 1rem;
+    color: #fff;
+    z-index: 100;
+}
+
+
+@media only screen and (min-width: 800px) {
+    .header nav{
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        background: none;
+        top: 0;
+        box-shadow: none;
+    }
+
+    .btnNav{
+        display: none;
+    }
+
+}
+

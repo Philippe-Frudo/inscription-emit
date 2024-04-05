@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INSCRIPTION</title>
+
+    <!-- ================= LINK CSS ================= -->
+    <link rel="stylesheet" href="../../CSS/default/style.css">
+    <link rel="stylesheet" href="../../CSS/inscription/style.css">
+    <!-- ================= LINK CSS ================= -->
+
+</head>
+<body>
+
+    <!--===================== DEBUT HEADER NAV ==================-->
+    <header class="header">
+        <div class="logo">
+           <a href="#">
+            <img src="../../images/logoEMIT.jpg" alt="EMIT">
+           </a>
+        </div>
+        <nav class="nav">
+            <a href="../inscription/index.html" class="inscription active-a">inscription</a>
+            <a href="../resultat/index.html" class="resultat">resultat</a>
+            <a href="../contact/index.html" class="contact">contact</a>
+        </nav>
+        <div class="btnNav">
+            <img src="../../icon/menuBar.ico" alt="BOUTTON MENU">
+        </div>
+    </header>
+    <!--====================== FIN HEADER NAV ========================-->
+
+
+    <main class="padding">
+
+         <!-- ============================ DEBUT SECTION ===========================-->
+        <section class="container">
+            <div class="containt-chercher">
+                <div class="title">
+                    <h1>S'inscrire</h1>
+                </div>
+           </div>
+
+            <!-- ======================= DEBUT DE LA FORMULAIRE ========================-->
+            <form action="#" method="POST">
+                <div class="form-containt">
+
+                    <div class="parcours">
+                        <span>Parcours:</span>
+                        <select name="parcours">
+                            <option value="DAII">DAII</option>
+                            <option value="RPM">RPM</option>
+                            <option value="AES">AES</option>
+                        </select>
+                        <!-- <input type="text" name="name" max="100" min="4" placeholder="Entrer votre nom" required> -->
+                    </div>
+
+                    <div class="centerExam">
+                        <span>Centre d`éxamen:</span>
+                        <select name="centerExam">
+                            <option value="Fianaratsoa">Fianaratsoa</option>
+                            <option value="Antananarivo">Antananarivo</option>
+                            <option value="Manakara">Manakara</option>
+                            <option value="Tamatave">Tamatave</option>
+                        </select>
+                        <!-- <input type="text" name="centerExam" placeholder="centre: Fianarantsoa, Antananarivo, ..." required> -->
+                    </div>
+
+                    <!-- ================== DEBUT INFORMATION CANDIDAT ============-->
+                    <div>
+                        <span>Nom:</span><br>
+                        <input type="text" class="nom" name="nom" max="100" min="4" placeholder="Entrer votre nom" required>
+                    </div>
+                        
+                    <div>
+                        <span>Prenom:</span><br>
+                        <input type="text" class="prenom" name="prenom" max="100" min="4" placeholder="Entrer votre nom">
+                    </div>
+
+                    <div>
+                        <span>Date de naissance:</span>
+                        <input type="date" class="dateNaissance" name="dateNaissance" required>
+                    </div>
+
+                    <div class="lieuNaissance">
+                        <span>Lieu de naissance:</span>
+                        <input type="text" name="lieuNaissance" required>
+                    </div>
+
+                    <div class="sexe">
+                        <span>Sexe:</span><br><br>
+                        <div class="sex-containt">
+                        <label>
+                            <input type="radio" name="sexe" checked>
+                            <span>Homme</span>
+                        </label>
+                        <label >
+                            <input type="radio" name="sexe">
+                            <span>Femme</span>
+                        </label>
+                    
+                        </div>
+                    </div>
+
+                    <div class="situationMatrimonial">
+                        <span>Situation matrimonial:</span>
+                        <select name="situationMatrimonial">
+                            <option value="Celibataire">Celibataire</option>
+                            <option value="Marie">Marie</option>
+                            <option value="Mariee">Mariee</option>
+                        </select>
+                    </div>
+
+                    <div class="nationalite">
+                        <span>Nationalité:</span>
+                        <select name="nationalite">
+                            <option value="Malagasy">Malagasy</option>
+                            <option value="Etranger">Etrenger</option>
+                        </select>
+                        <!-- <input type="text" name="nationality" placeholder="Nationalité" required> -->
+                    </div>
+
+                    <div class="tel">
+                        <span>Téléphone:</span>
+                        <input type="text" name="tel" max="12" min="10" placeholder="Téléphone">
+                    </div>
+
+                    <div class="adresPostal">
+                        <span>Adresse postal:</span>
+                        <input type="text" name="adresPostal" placeholder=" ">
+                    </div>
+                    <!-- ================== FIN INFORMATION CANDIDAT ============-->
+
+
+                    <!-- =================== DEBUT INFO DIPLOME CANDIDAT ================== -->
+                    <div class="numIncsriptionBacc">
+                        <span>Numéro d`incription BACC:</span>
+                        <input type="text" name="numIncsriptionBacc" placeholder="Numéro d`incription">
+                    </div>
+
+                    <div class="serieBacc">
+                        <span>Série BACC:</span>
+                        <select name="serieBacc">
+                            <option value="L">L</option>
+                            <option value="OSE">OSE</option>
+                            <option value="D">D</option>
+                            <option value="S">S</option>
+                            <option value="C">C</option>
+                            <option value="Téchnique">Téchnique</option>
+                        </select>
+                        <!-- <input type="number" name="serialBACC" placeholder="Numéro d`incription"> -->
+                    </div>
+
+                    <div class="mentionBacc">
+                        <span>Mention BACC:</span>
+                        <select name="mentionBacc">
+                            <option value="Passable">Passable</option>
+                            <option value="Assez Bien">Assez Bien</option>
+                            <option value="Bien">Bien</option>
+                            <option value="Très Bien">Très Bien</option>
+                            <option value="Honorable">Honorable</option>
+                        </select>
+                        <!-- <input type="number" name="serialBACC" placeholder="Numéro d`incription"> -->
+                    </div>
+
+                    <div class="centreBacc">
+                        <span>Centre BACC:</span>
+                        <input type="text" name="centreBacc" placeholder="Farafangana, Fianarantsoa, ...">
+                    </div>
+                    <!-- =================== FIN INFO DIPLOME CANDIDAT ================== -->
+
+                    
+                    <!-- ===============DEBUT INFO DOSSIER CANDIDAT -================-->
+                    <div class="imgPayment">
+                        <span>Versement:</span>
+                        <input type="file" name="imgPayment" id="imgPayment" placeholder="BORDEREAU" hidden>         
+                        <label for="imgPayment" class="importIMG">
+                            <span class="imgPayment">X</span>
+                           <img src="" alt="imgPayment">
+                        </label>   
+                    </div>
+
+                    <div class="imgFiche">
+                        <span>Fiche de rensegnement:</span>
+                        <input type="file" id="imgFiche" name="imgFiche" placeholder="Fiche de rensegnement" hidden>
+                        <label for="imgFiche" class="importIMG">
+                            <span class="imgFiche">X</span>
+                            <img src="" alt="imgFiche">
+                        </label> 
+                    </div>
+
+                    <div class="imgDemande">
+                        <span>Demande d`inscription:</span>
+                        <input type="file" id="imgDemande" name="imgDemande" placeholder="Demande d`ìnscription" hidden>
+                        <label for="imgDemande" class="importIMG">
+                            <span class="imgDemande">X</span>
+                            <img src="" alt="imgDemande">
+                         </label> 
+                    </div>
+
+                    <div class="imgDiplome">
+                        <span>Diplome ou Relelé de note:</span>
+                        <input type="file" id="imgDiplome" name="imgDiplome" placeholder="Diplome ou relevé" hidden>
+                        <label for="imgDiplome" class="importIMG">
+                            <span class="imgDiplome">X</span>
+                            <img src="" alt="imgDiplome">
+                         </label> 
+                    </div>
+
+                    <div class="imgAEC">
+                        <span>Acte d`Etat Civil:</span>
+                        <input type="file" id="imgAEC" name="imgAEC" placeholder="Acte d`Etat Civil" hidden>
+                        <label for="imgAEC" class="importIMG">
+                            <span class="imgAEC">X</span>
+                            <img src="" alt="imgAEC">
+                         </label> 
+                    </div>
+
+                    <div class="imgIdentite">
+                        <span>Photo d`identité:</span>
+                        <input type="file" id="imgIdentite" name="imgIdentite" placeholder="Photo" hidden>
+                        <label for="imgIdentite" class="importIMG">
+                            <span class="imgIdentite">X</span>
+                            <img src="" alt="imgIdentite">
+                         </label> 
+                    </div>
+                    <!-- ===============FIN INFO DOSSIER CANDIDAT -================-->
+
+                </div>
+
+
+                <div >
+                    <button type="submit" class="btn inscrire">S'inscrire</button>
+                </div>
+
+            </form>
+            <!-- ======================= FIN DE LA FORMULAIRE ==========================-->
+
+        </section>
+        <!-- ============================ FIN SECTION ===========================-->
+
+    </main>
+
+
+    <!-- =========================== DEBUT DU FOOTER ===========================-->
+    <footer class="padding">
+        <div class="article">
+            <article>
+                <h2>Accueil</h2>
+                <ul>
+                    <li>
+                        <a href="#">Actualites</a>
+                    </li>
+                    <li>
+                        <a href="#">Prix obtenus</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Formation</h2>
+                <ul>
+                    <li>
+                        <a href="#">Nos formations</a>
+                    </li>
+                    <li>
+                        <a href="#">Emploi du temps</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Personnel</h2>
+                <ul>
+                    <li>
+                        <a href="#">Enseignants</a>
+                    </li>
+                    <li>
+                        <a href="#">Personnel Administratif </a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Partenaire</h2>
+                <ul>
+                    <li>
+                        <a href="#">Laboratoires de recherche</a>
+                    </li>
+                    <li>
+                        <a href="#">Ecole et Univercites</a>
+                    </li>
+                    <li>
+                        <a href="#">Entreprise</a>
+                    </li><li>
+                        <a href="#">Organigrames publiques</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Recherche</h2>
+                <ul>
+                    <li>
+                        <a href="#">Publique Scientifique</a>
+                    </li>
+                    <li>
+                        <a href="#">Memoires et theses</a>
+                    </li>
+                </ul>
+            </article>
+            <article>
+                <h2>Vie estudiantine</h2>
+                <ul>
+                    <li>
+                        <a href="#">Activites</a>
+                    </li>
+                </ul>
+            </article>
+        </div>
+    </footer>
+    <div class="endFoot">
+        &copy; Ecole de Management et d'Innovation Technologique-2024
+    </div>
+    <!-- =========================== FIN DU FOOTER ===========================-->
+
+
+
+    <!-- ============= DEBUT DU SCRIPT JS ====================== -->
+    <script>
+        document.querySelector(".inscription").classList.add("active-a");
+    </script>
+    <script src="../../JS/default/script.js" type="text/javascript"></script>
+    <script src="../../JS/inscription/script.js" type="text/javascript"></script> 
+     <!-- ==================== FIN DU SCRIPT JS ===================== -->
+     
+</body>
+</html>

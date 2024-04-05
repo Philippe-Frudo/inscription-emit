@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEMANDE</title>
+
+    <!-- ===================CSS===================== -->
+    <link rel="stylesheet" href="../../CSS/demandes/style.css">
+    <link rel="stylesheet" href="../../CSS/default/style.css">
+    <!-- ===================CSS===================== -->
+
+</head>
+<body>
+
+    <!-- ========================== DEBUT BAR DE NAVIGATION ==================== -->
+    <header class=".header">
+        <div class="logo">
+            <a href="#"><img src="../../images/logoEMIT.jpg" alt="EMIT">Ecole de Management pour l'Innovation Technique</a>
+        </div>
+        <nav>
+            <ul>
+                <li>
+                    <a href="../dashbord/index.html">
+                        <img src="../../icon/dashboard.ico" alt="dashboard">
+                        Dashbord
+                    </a>  
+                </li>
+                <li>
+                    <a href="../demandes/index.html" class="active">
+                        <img src="../../icon/demand.ico" alt="demande">
+                        demande
+                    </a>
+                </li>
+                <li>
+                    <a href="../utilisateur/index.html">
+                        <img src="../../icon/utilisateur.ico" alt="utilisateur">
+                        Utilisateur
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../../icon/dashboard.ico" alt="dashboard">
+                        Parametre
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <!-- ========================== FIN BAR DE NAVIGATION ==================== -->
+
+    <main>
+
+        <!-- ===================DEBUT HEADER MAIN===============-->
+        <div class="header">
+            <article>
+                <div class="left">
+                    <h1 class="title">ADMINISATRATEUR</h1>
+                </div>
+                <div class="right">
+                    <div class="cherche">
+                        <input type="text" placeholder="Chercher...">
+
+                    </div>
+                    <div class="a">
+                        <a href="#"><img src="../../icon/secured.ico" alt="MAIL"></a>
+                        <span>2</span>
+                    </div>
+                    <div class="a">
+                        <a href="#"><img src="../../icon/notification.ico" alt="Notification"></a>
+                        <span>1</span>
+                    </div>
+                    <div class="utilisateur">
+                        <img src="../../img/user.ico" alt="Utilisateur">
+                        <p>L.P.N.Frudo</p>
+
+                    </div>
+                </div>
+                <!-- =======SELECT======== -->
+                <div class="clickProfile">
+                    <ul>
+                        <li>
+                            <a href="#">
+                                <img src="../../icon/utilisateur.ico" alt="utilisateur">
+                                Profile
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../../icon/dashboard.ico" alt="parametre">
+                                Paramètre
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <img src="../../icon/deconnexion.ico" alt="deconnecté">
+                                deconnexion
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                <!-- =======SELECT======== -->
+            </article>
+        </div>
+        <!-- ==================FIN HEADER MAIN================ -->
+
+        <!-- =================FIN DE MAIN SECTION=========================== -->
+        <section>
+
+             <!-- ===========DEBUT TTITRE SECTION================ -->
+            <div class="title-section">
+                <h1>CANDIDATS</h1>
+            </div>
+            <!-- ===========FIN TTITRE SECTION================= -->
+
+            <!-- ===========DEBUT NAV================= -->
+            <div class="candidat-nav">
+                <span class="candidat-demander active-a" >demander</span>
+                <span class="candidat-accepter" >Accepter</span>
+                <span class="candidat-rejeter" >Rejeter</span>
+            </div>
+            <!-- ===========FIN NAV================= -->
+  
+            <div>
+
+                <!-- =====================DEBUT DEMANDE================================= -->
+                <section class="element-tab element-tab block" id="candidat-demander">
+
+                    <!-- ===========++++++++++++++++++++++++================= -->
+                    <main class="padding">
+                        
+                        <div class="localCherche">
+                            <div>
+                                <div class="search">
+                                    <input type="date" id="search-date">
+                                </div>
+                                <div class="search">
+                                    <select name="search-mention" id="search-mention">
+                                        <option value="Tous affiches">Tous affiches</option>
+                                        <option value="DAII">DAII</option>
+                                        <option value="AES">AES</option>
+                                        <option value="RPM">RPM</option>
+                                    </select>
+                                </div>
+                                <div class="search">
+                                    <select name="search-center" id="search-center">
+                                        <option value="Fianarantsoa">Fianarantsoa</option>
+                                        <option value="Antananarivo">Antananarivo</option>
+                                    </select>
+                                </div>
+                                <div class="search">
+                                    <select name="search-nationality" id="search-nationality">
+                                        <option value="Malagasy">Malagasy</option>
+                                        <option value="Etranger">Etranger</option>
+                                    </select>
+                                </div>
+                
+                                <div class="search">
+                                    <input type="text" id="search-candidat" placeholder="Entrer le nom ou prenem">
+                                </div>
+                                <!-- <div>
+                    
+                                </div> -->
+                            </div>
+                        </div>
+                        <!-- =====================ERCHEBAR DE RECH================================= -->
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Nom et Prenom</th>
+                                    <th>Telephone</th>
+                                    <th>Serie</th>
+                                    <th>mention BACC</th>
+                                    <th>Lieu d'examen</th>
+                                    <th>libelle parcours</th>
+                                    <th>date d'envoyer</th>
+                                </tr>
+                            </thead>
+                            <tbody class="demandeEnvoyer">
+                                <tr class="information">
+                                    <td>1</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>2</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>3</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>id</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>id</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>id</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>id</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>id</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                            </tbody>
+                        </table>                
+                    </main>
+                    <!-- ===========+++++++++++++++++++++++++================= -->
+
+                </section>
+                <!-- =====================FIN DEMANDE================================= -->
+
+                <!-- =====================DEBUT ACCEPTER================================= -->
+                <section class="element-tab" id="candidat-accepter">
+                     <!-- ===========++++++++++++++++++++++++================= -->
+                     <main class="padding">
+                        <div class="localCherche">
+                            <div>
+                                <div class="search">
+                                    <input type="date" id="search-date">
+                                </div>
+                                <div class="search">
+                                    <select name="search-mention" id="search-mention">
+                                        <option value="Tous affiches">Tous affiches</option>
+                                        <option value="DAII">DAII</option>
+                                        <option value="AES">AES</option>
+                                        <option value="RPM">RPM</option>
+                                    </select>
+                                </div>
+                                <div class="search">
+                                    <select name="search-center" id="search-center">
+                                        <option value="Fianarantsoa">Fianarantsoa</option>
+                                        <option value="Antananarivo">Antananarivo</option>
+                                    </select>
+                                </div>
+                                <div class="search">
+                                    <select name="search-nationality" id="search-nationality">
+                                        <option value="Malagasy">Malagasy</option>
+                                        <option value="Etranger">Etranger</option>
+                                    </select>
+                                </div>
+                
+                                <div class="search">
+                                    <input type="text" id="search-candidat" placeholder="Entrer le nom ou prenem">
+                                </div>
+                                <!-- <div>
+                    
+                                </div> -->
+                            </div>
+                        </div>
+                        <!-- =====================ERCHEBAR DE RECH================================= -->
+                
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>id</th>
+                                    <th>Nom et Prenom</th>
+                                    <th>Telephone</th>
+                                    <th>Serie</th>
+                                    <th>mention BACC</th>
+                                    <th>Lieu d'examen</th>
+                                    <th>libelle parcours</th>
+                                    <th>date d'envoyer</th>
+                                </tr>
+                            </thead>
+                            <tbody class="demandeAccepter">
+                                <tr class="information">
+                                    <td>1</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>2</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>3</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>id</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>id</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                                <tr class="information">
+                                    <td>id</td>
+                                    <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                    <td>Telephone</td>
+                                    <td>Serie</td>
+                                    <td>mention BACC</td>
+                                    <td>Lieu d'examen</td>
+                                    <td>libelle parcours</td>
+                                    <td>date d'envoyer</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </main>
+                    <!-- ===========+++++++++++++++++++++++++================= -->
+                
+                </section>
+                <!-- =====================FIN ACEPTER================================= -->
+
+                <!-- =====================DEBUT REJETER================================= -->
+                <section class="element-tab" id="candidat-rejeter">
+                    <!-- ===========++++++++++++++++++++++++================= -->
+                    <main class="padding">
+                       <div class="localCherche">
+                           <div>
+                               <div class="search">
+                                   <input type="date" id="search-date">
+                               </div>
+                               <div class="search">
+                                   <select name="search-mention" id="search-mention">
+                                       <option value="Tous affiches">Tous affiches</option>
+                                       <option value="DAII">DAII</option>
+                                       <option value="AES">AES</option>
+                                       <option value="RPM">RPM</option>
+                                   </select>
+                               </div>
+                               <div class="search">
+                                   <select name="search-center" id="search-center">
+                                       <option value="Fianarantsoa">Fianarantsoa</option>
+                                       <option value="Antananarivo">Antananarivo</option>
+                                   </select>
+                               </div>
+                               <div class="search">
+                                   <select name="search-nationality" id="search-nationality">
+                                       <option value="Malagasy">Malagasy</option>
+                                       <option value="Etranger">Etranger</option>
+                                   </select>
+                               </div>
+               
+                               <div class="search">
+                                   <input type="text" id="search-candidat" placeholder="Entrer le nom ou prenem">
+                               </div>
+                               <!-- <div>
+                   
+                               </div> -->
+                           </div>
+                       </div>
+                       <!-- =====================ERCHEBAR DE RECH================================= -->
+               
+                       <table>
+                           <thead>
+                               <tr>
+                                   <th>id</th>
+                                   <th>Nom et Prenom</th>
+                                   <th>Telephone</th>
+                                   <th>Serie</th>
+                                   <th>mention BACC</th>
+                                   <th>Lieu d'examen</th>
+                                   <th>libelle parcours</th>
+                                   <th>date d'envoyer</th>
+                               </tr>
+                           </thead>
+                           <tbody class="demandeRejeter">
+                               <tr class="information">
+                                   <td>1</td>
+                                   <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                   <td>Telephone</td>
+                                   <td>Serie</td>
+                                   <td>mention BACC</td>
+                                   <td>Lieu d'examen</td>
+                                   <td>libelle parcours</td>
+                                   <td>date d'envoyer</td>
+                               </tr>
+                               <tr class="information">
+                                   <td>2</td>
+                                   <td>Nom et Prenomgfbnfobjftiohjrtbnpegr4meprbmgknd</td>
+                                   <td>Telephone</td>
+                                   <td>Serie</td>
+                                   <td>mention BACC</td>
+                                   <td>Lieu d'examen</td>
+                                   <td>libelle parcours</td>
+                                   <td>date d'envoyer</td>
+                               </tr>
+                           </tbody>
+                       </table>
+                   </main>
+                   <!-- ===========+++++++++++++++++++++++++================= -->
+               
+               </section>
+               <!-- =====================FIN REJETER================================= -->
+            
+            </div>
+        
+        </section>
+        <!-- =================FIN DE MAIN SECTION=========================== -->
+
+         <!-- CARD INFO CAND -->
+         <div class="divVide"></div>
+         <article class="containerArticle">
+            <div class="container-formation">
+                <div class="cardRemove">
+                    <h3>INFORMATION CANDIDATAT</h3> 
+                    <h3 class="btnRemoveCard">X</h3>
+                </div>
+                <div>
+                    <div class="p-formation">
+                        <p>Lieu d'examen: <span class="lieuExam"></span></p>
+                        <p>date d'envoyer: <span class="envoyer"></span></p>
+                        <p>parcours: <span class="parcours"></span></p>
+                        <p>id: <span class="id"></span></p>
+                        <p>nom: <span class="nom"></span></p>
+                        <p>prenom: <span class="prenom"></span></p>
+                        <p>Date de naissance: <span class="dateNaissance"></span></p>
+                        <p>Lieu de Naissance: <span class="lieuNaissance"></span></p>
+                        <p>Sexe: <span class="sexe"></span></p>
+                        <p>Nationalité: <span class="nationalite"></span></p>
+                        <p>Situation matrimoniale: <span class="situationMatri"></span></p>
+                        <p>Adresse  postale: <span class="adrsPostal"></span></p>
+                        <p>E-mail: <span class="email"></span></p>
+                        <p>Telephone: <span class="telephone"></span></p>
+                
+                        <p>Numéro d'inscription: <span class="num-inscription"></span></p>
+                        <p>Serie en BACC: <span class="SerieBACC"></span></p>
+                        <p>mention BACC: <span class="mentionBACC"></span></p>
+        
+                    </div>
+                    <div>
+                        <p>photo: <span class="photo">
+                            <img src="#" alt="photo">
+                        </span></p>
+                        <p>Demande: <span class="demande">
+                            <img src="#" alt="demande">
+                        </span></p>
+                        <p>fiche: <span class="fiche">
+                            <img src="#" alt="fiche">
+                        </span></p>
+                        <p>Diplome BACC ou Releve: <span class="diplome_releve">
+                            <img src="#" alt="diplome_releve">
+                        </span></p>
+                        <p>Copie: <span class="copie">
+                            <img src="#" alt="copie">
+                        </span></p>
+                    </div>
+                </div>
+                <article class="buttonConfirme">
+                    <div>
+                        <input type="checkbox" name="accepter" id="accepter" hidden>
+                        <label for="accepter">Accepter</label>
+                    </div>
+    
+                    <div>
+                        <input type="checkbox" name="rejeter" id="rejeter" hidden>
+                        <label for="rejeter">Rejeter</label>
+                    </div>
+                </article>
+
+                
+            </div>
+        </article>             
+    </main>
+
+
+    <!-- ================== JS ======================= -->
+    <script src="../../JS/default/script.js"></script>
+    <script src="../../JS/demandes/script.js"></script>
+    <!-- ================== JS ======================= -->
+</body>
+</html>

@@ -1,0 +1,629 @@
+*{
+    box-sizing: border-box;
+}
+
+a{
+    color: #fff;
+    text-decoration: none;  
+}
+
+body{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    max-width: 100%;
+    height: auto;
+    /* height: 100vh;
+    max-height: 98vh; */
+}
+
+::-webkit-scrollbar{
+    width: 0.3rem;
+    border-radius: 0.5rem;
+}
+::-webkit-scrollbar-thumb{
+    width: 0.2rem;
+    border-radius: 0.5rem;
+}
+
+.deconnexion{
+    cursor: pointer;
+}
+
+header{
+    box-sizing: border-box;
+    background: linear-gradient(rgb(65, 94, 223, 0.9),rgb(65, 94, 223, 0.9), rgb(65, 94, 223,0.9), rgb(65, 94, 223, 0.9), rgb(65, 94, 223, 0.9)),
+                url("../../images/emit.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: top;
+    min-width: 280px;
+    
+}
+
+header div.logo{
+    border-bottom: 1px solid #fff;
+    padding: 1rem;
+}
+
+
+header div.logo a{
+    display: flex;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 0.6rem;
+    font-weight: 600;
+    line-height: 1.3rem;
+}
+
+header div.logo img{
+    width: 60px;
+    border-radius: 0.5rem;
+}
+
+header nav{
+    width: 100%;
+    padding: 0 1rem 0 0;
+    margin-top: 1.5rem;
+
+}
+
+ul{
+    display: inline;
+    list-style: none;  
+}
+
+ul li{
+    width: 100%;
+}
+
+/* DEBUT TYLE TABLEAY  */
+table {
+    overflow-y: scroll;
+    border-collapse: collapse; 
+}
+table thead{
+    /* position: fixed; */
+    margin-top: -10px;
+    padding-left: 20px;
+    padding: 0;
+    
+}
+
+table thead th{
+    flex-wrap: nowrap;
+    /* padding: 1rem; */
+}
+
+/* table tbody tr:nth-child(1) td{
+    padding-top: 50px;
+} */
+
+table tbody tr{
+    border-radius: 2px;
+    box-shadow: 0 0 1px #000;
+    transition: 0.3s;
+    /* padding: 0.5rem; */
+}
+
+table thead tr th, table tbody tr td{
+    padding: 0.5rem;
+    text-align: start;
+    width: 150px;
+}
+table thead tr td{
+    overflow-wrap: break-word;
+}
+table thead tr th{
+    text-transform: capitalize;
+}
+
+table thead tr th:nth-of-type(1), 
+table tbody tr td:nth-of-type(1){
+    width: 50px;
+}
+table thead tr th:nth-of-type(2), 
+table tbody tr td:nth-of-type(2){
+    width: 150px;
+}
+table thead tr th:nth-of-type(3), 
+table tbody tr td:nth-of-type(3){
+    width: 200px;
+}
+table thead tr th:nth-of-type(4), 
+table tbody tr td:nth-of-type(4){
+    width: 130px;
+}
+table thead tr th:nth-of-type(5), 
+table tbody tr td:nth-of-type(5){
+    width: 100px;
+}
+
+table thead tr th:nth-of-type(6), 
+table tbody tr td:nth-of-type(6){
+    text-align: center;
+    width: 100px;
+}
+/* table thead tr th:nth-of-type(7), 
+table tbody tr td:nth-of-type(7){
+    width: 150px;
+} */
+
+table thead tr th:nth-of-type(8), 
+table tbody tr td:nth-of-type(8){
+    width: 150px;
+    text-align: center;
+}
+table thead tr th:nth-of-type(9), 
+table tbody tr td:nth-of-type(9),
+table thead tr th:nth-of-type(10), 
+table tbody tr td:nth-of-type(10){
+    width: 100px;
+    text-align: center;
+}
+
+table thead tr{
+    background: #5ea4e6;
+}
+
+table tbody tr:nth-child(odd) {
+    background: #ffffff;
+    /* margin-bottom: 5px; */
+}
+table tbody tr:nth-child(even){
+    background: rgb(202, 202, 202, 0.3);
+}
+/* FIN TYLE TABLEAY  */
+
+header nav ul li a{
+    text-transform: capitalize;
+    font-size: 1.2rem;
+    color: rgb(255, 255, 255, 0.7);
+    border: 2px solid transparent;
+    border-left: none;
+    padding: 1rem;
+    margin-bottom: 3px;
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    column-gap: 1rem;
+    transition: 0.2s;
+}
+
+header nav ul li a:hover{
+    border: 2px solid  rgb(255, 255, 255, 0.7);
+    border-left: none;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to left ,  rgb(255, 255, 255, 0.5),rgb(255, 255, 255, 0.2),rgb(255, 255, 255, 0.1),rgb(255, 255, 255, 0));
+}
+
+header nav ul li a.active{
+    border: 2px solid  rgb(255, 255, 255, 0.7);
+    border-left: none;
+    color: rgb(255, 255, 255);
+    background: linear-gradient(to left ,  rgb(255, 255, 255, 0.5),rgb(255, 255, 255, 0.2),rgb(255, 255, 255, 0.1),rgb(255, 255, 255, 0));
+}
+
+header nav ul img{
+    width: 1.8rem;
+}
+
+
+/* input:focus{
+    outline: 2px solid blue;
+} */
+
+#msgUupd, #msgAddU{
+    position: absolute;
+    top: 10%; left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 0.7rem 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    /* background: rgb(64, 156, 52, 0.7); */
+    background: rgba(255, 0, 0, 0.6);
+    width: 80%;
+    font-size: 1.1rem;
+    color: #fff;
+    text-align: center;
+    display: none;
+}
+
+
+/* ================================= MAIN ======================================= */
+
+main{
+    box-sizing: border-box;
+    /* background-color: red; */
+    min-width: calc(100% - 280px);
+}
+
+main div.header {
+    padding: 0.8rem 1.3rem;
+    background: #fff;
+    /* border-bottom: 1px solid rgb(0, 0, 0, 0.5); */
+    box-shadow: 0 3px 6px rgb(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+main .header article{
+    display: flex;
+    align-items: center;
+    justify-content: space-between; 
+    margin: 0;
+}
+
+main .header article div{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; 
+}
+
+
+main .header article div.left{
+   width: 40%;
+}
+main .header article div.rignt{
+    width: 60%;
+}
+
+main .header article .right .cherche input{
+    font-size: 1.1rem;
+    padding: 0.8rem;
+    border-radius: 1rem;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.2);
+    width: 400px;
+    max-width: 100%;
+    min-width: auto;
+}
+
+main .header article div.left h1.title{
+    font-size: 1.2rem;
+}
+main .header article .right div{
+    padding:0 1.3rem;
+    position: relative;
+    margin: 0 20px;
+    /* height: 70px; */
+}
+main .header article .right div.a {
+    border-left: 1px solid  rgb(0, 0, 0, 0.3);
+    border-right: 1px solid  rgb(0, 0, 0, 0.3);
+}
+
+main .header article .right div.a a{
+    padding: 10px;
+    transition: 0.2s;
+    box-shadow: 0 0 5px  transparent;
+}
+
+main .header article .right div.a a:hover{
+    transform: scale(1.15);
+}
+
+main .header article .right div.a span{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-size: contain;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #fff;
+}
+
+main .header article .right div img {
+    font-size: 1.3rem;
+}
+main .header article .right div img[alt="Utilisateur"] {
+    padding: 0.6rem;
+    margin: 0.6rem;
+    border-radius: 50%;
+}
+
+
+main .header article .right div.utilisateur{
+    cursor: pointer;
+    border-radius: 1rem;
+    transition: 0.3s;
+    box-shadow: 0 0 5px  transparent;
+    z-index: 1000;
+
+}
+main .header article .right div.utilisateur:hover{
+    transform: scale(1.01);
+    box-shadow: 0 0 5px rgb(0, 0, 0, 0.5);
+}
+
+main .header article .right div.utilisateur::after{
+    content: '';
+    position: absolute;
+    bottom: 0px;
+    right: 40%;
+    width: 25px;
+    height: 25px;
+    background: url("../../icon/sort_left.ico");
+    background-repeat: no-repeat;
+    background-size: contain;
+    transform: rotate(-90deg);
+}
+
+main .header article .right div.utilisateur p{
+    /* font-style: italic; */
+    font-weight: 600;
+    color: rgb(0, 0, 0, 0.8);
+}
+
+/* ===================SELECT PROFIL================== */
+.clickProfile {
+    background: rgb(128, 128, 128);
+    width: 250px;
+    position: absolute;
+    top: -100%;
+    right: 10px;
+    box-shadow: 0 0 1px #000;
+    transition: top 0.5s;
+    z-index: 1;
+}
+
+.showNav{
+    top: 100px;
+}
+
+.clickProfile ul li {
+    margin-bottom: 1rem;
+    margin-left: -30px;
+}
+
+.clickProfile ul li a{
+    font-weight: 600;
+    padding: 10px 5px;
+    color: rgb(255, 255, 255, 0.7);
+    display: flex;
+    align-items: center;
+    align-content: center;
+    gap: 10px;
+    border-bottom: 2px transparent;
+}
+
+.clickProfile ul li a:hover{
+    color: #FFF;
+}
+
+.clickProfile ul li a img{
+    width: 20px;
+}
+
+main > section{
+    padding: 0.5rem 2rem;
+
+}
+
+
+div.title-section{
+    display: flex;
+    justify-content: flex-start;
+    align-content: center;
+    align-items: center;
+}
+
+div.candidat-nav span{
+    position: relative;
+    color: rgb(0, 0, 0.5);
+    font-size: 1.2rem;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: capitalize;
+    margin: 0 0.5rem;
+    padding: 0.5rem 0;
+}
+
+div.candidat-nav span::after{
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: rgb(0, 0, 0.5);
+    transition: width 0.2s;
+}
+div.candidat-nav span.active-a::after{
+    width: 100%;
+}
+div.candidat-nav span:hover::after{
+    width: 100%;
+}
+
+.element-tab{
+    display: none;
+    overflow: hidden;
+    overflow-y: scroll;
+    height: 85vh;
+    max-height: 65vh;
+}
+.block{
+    display: block;
+}
+
+.divVide{
+    position: fixed;
+    top: 0; left: 0; right: 0;bottom: 0;
+    background: rgb(0, 0, 0, 0.5);
+    display: none;
+}
+
+.card-rm{
+    width: 100%;
+    position: relative;
+}
+
+.btnRemoveCard, .btnRemovedAddU{
+    width: 50px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0.5rem;
+    color: #fff;
+    background-color: red;
+    border: none;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+    margin: 0 auto;
+}
+
+.btnRemovedAddU{
+    top: -10px;
+    right: 10px;
+}
+
+.submitMod{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+/* .btnRemoveCard:hover{
+    /* background: rgb(255, 0, 0, 0.3); 
+} */
+
+.btnModifierConfirme{
+    padding: 1rem;
+    font-size: 1rem;
+    font-weight: 600;
+    background: green;
+    width: auto;
+    text-align: left;
+    margin-top: 1rem;
+    width: 120px;
+    /* position: absolute; */
+    left: 700px;
+    top: 600px;
+    cursor: pointer;
+}
+
+/* =================SELECT PROFIL==================== */
+.containt-ajoutUtilisateur{
+    text-align: right;
+}
+
+.btn, .btnTable{
+    text-transform: capitalize;
+    text-align: center;
+    font-weight: 600;
+    color: rgb(255, 255, 255);
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0;
+    background: rgb(0, 0, 255, 0.7);
+    font-size: 1rem;
+    padding: 1em;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btnTable{
+    padding: 0.5em;
+
+}
+
+.ajoutUtilisateur{
+
+    position: relative;
+    right: 4%;
+    transition: 0.3s;
+}
+.btn:hover, .btnTable:hover{
+    color: rgb(255, 255, 255);
+    transform: scale(1.005);
+    box-shadow: 0 0 2px rgb(0, 0, 255, 0.8);
+    background: rgb(0, 0, 255, 0.8);
+}
+
+
+.containerArticle, .cardU{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    width: 1000px;
+    top: -200%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1001;
+    transition: 0.5s;
+}
+
+.cardU{
+    width: 1000px;
+}
+
+.content-addUser{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 300px));
+    align-items: center;
+    justify-content: space-between;
+    column-gap: 100px;
+
+}
+/* =============================  FIN MAIN ==================================== */
+
+
+
+/* //ALERT ERREUR PHP */
+.msgErrorChamp{
+    color: red;
+    opacity: 0;
+}
+
+.divAlert{
+    width: 100%;
+    background-color: rgb(177, 57, 57);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+    padding: 0 1rem;
+}
+
+.msgErreurAjout{
+    color: rgb(255, 255, 255);
+    padding: 0.3rem;
+    font-size: 1.2rem;
+}
+
+
+.removemsgErreurAjout{
+    font-size: 1rem;
+    padding: 0.3rem;
+    color: #fff;
+    z-index: 100;
+}
+
+
+/* ALERT SERVER  */
+.elertServeur{
+    color: #fff;
+    padding: 0.5rem;
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+    background-color: rgb(255, 0, 0, 0.8);
+}
+
+

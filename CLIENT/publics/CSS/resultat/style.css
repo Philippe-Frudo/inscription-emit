@@ -1,0 +1,61 @@
+
+.containt-chercher form {
+    flex: 2;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-content: space-between;
+    column-gap: 10px;
+    margin-bottom: 20px; 
+}
+
+
+input.chercher{
+    position: relative;
+    outline: none;
+    border: none;
+    box-shadow: 0 0 2px rgb(0, 0, 0, 0.4);
+    padding: 10px;
+    width: 100%;
+    max-width: 100%;
+    min-width: 200px;
+    font-size: var(--input-size);
+    overflow: hidden;
+}
+
+table {
+    overflow-y: scroll;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table thead tr th, table tbody tr td{
+    width: auto;
+    padding: 1rem 0.5rem;
+    text-align: start;
+    text-wrap: nowrap;
+}
+
+table thead tr{
+    background: #5ea4e6;
+}
+
+table tbody tr{
+    transition: 0.3s;
+    box-shadow: 0 0 2px #000;
+}
+
+
+table tbody tr:nth-child(odd) {
+    background: #ffffff;
+    margin-bottom: 5px;
+}
+table tbody tr:nth-child(even){
+    background: rgb(202, 202, 202, 0.3);
+}
+
+ tr{
+    border-radius: 2px;
+    box-shadow: 0 0 0px #000;
+}
+
