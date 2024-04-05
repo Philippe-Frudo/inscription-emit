@@ -109,8 +109,9 @@ h3{
 
 
 .container-formation div img{
+    width: 100%;
     max-width: 300px;
-    max-height: 300px;
+    max-height: 200px;
     background: rgb(93, 102, 110, 0.5);
     display: block;
     cursor: pointer;

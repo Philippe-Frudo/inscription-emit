@@ -209,7 +209,6 @@ export function showUserConnect(data){
 // } getUserConnect();
  
 
-
 function getDataU(){
     let actionU = "getsAllDataUser";
     const urlU = `http://localhost/PROJET_JS_L2/ADMIN/controleurs/controlUtilisateur.php?actionU=${encodeURIComponent(actionU)}`;
@@ -301,7 +300,6 @@ function deleteUser(p_id) {
         console.log("reponse du serveur", data);   
     }).catch(e => console.log("Erreur de serveur ",{cause:e}));
 }
-
 
 
 const inputsContainersUsers = document.querySelector(".content-addUser").children;

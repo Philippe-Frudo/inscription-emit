@@ -463,6 +463,7 @@ div.candidat-nav span:hover::after{
     top: 0; left: 0; right: 0;bottom: 0;
     background: rgb(0, 0, 0, 0.5);
     display: none;
+    z-index: 1001;
 }
 
 .card-rm{

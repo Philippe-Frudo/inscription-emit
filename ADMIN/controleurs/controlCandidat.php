@@ -13,6 +13,7 @@
 
     // $dataInsert = json_decode($_POST[]);
 
+
     function getsData(){
         $candidat = new Candidat();
         $dbo = new Database2();
@@ -148,10 +149,24 @@
     }
 
     //UPDATE STATUS CANDIDAT (ACCEPT)
-    elseif($action1 == "acceptCandidat"){
-        $idAccept = $_POST['id'];
-        $resultat = $candidat->updateStatus($dbo, $idAccept, 1);
-        echo json_encode(['statu' => $resultat]);
+    elseif($action1 == "accepter"){
+        $idA = $_POST['id'];
+        $resultat = $candidat->updateStatusaccepter($dbo, $id, 1);
+        echo json_encode(['status' => $resultat]);
+    }
+
+    //UPDATE STATUS CANDIDAT (REJETER)
+    elseif($action1 == "rejeter"){
+        $idR = $_POST['id'];
+        $resultat = $candidat->updateStatusRejeter($dbo, $idR, 1);
+        echo json_encode(['status' => $resultat]);
+    }
+    
+    //DELETE CANDIDAT (REJETER)
+    elseif($action1 == "delete"){
+        $id = $_POST['id'];
+        $resultat = $candidat->deleteCandidat($dbo, $id);
+        echo json_encode(['candidatDelete' => $resultat]);
     }
 
     //GET CANDIDAT BY ID

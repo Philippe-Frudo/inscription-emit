@@ -102,21 +102,20 @@ function getsAllCandidat(data) {
     let tmpData = "";
     // onclick='showDetailCandidat("+c.idC+")'
     data.forEach(c => {
-        if (c.statusC == 0) {
-                tmpData += "<tr>";
-                    tmpData += "<td>"+c.idC+"</td>";
-                    tmpData += "<td>"+c.nomC+"</td>";
-                    tmpData += "<td>"+c.prenomC+"</td>";
-                    tmpData += "<td>"+c.emailC+"</td>";
-                    tmpData += "<td>"+c.telC+"</td>";
-                    tmpData += "<td>"+c.serieBacc+"</td>";
-                    tmpData += "<td>"+c.centreExamC+"</td>";
-                    tmpData += "<td>"+c.parcoursC+"</td>";
-                    tmpData += "<td>"+c.dateEC+"</td>";
-                    tmpData += "<td><button type='button' id="+c.idC+" class='btnDetails btnTable btn' data-details='"+c.idC+"'>Detaille</button></td>";
-                tmpData += "</tr>";
+        if (c.statusCA == 0 && c.statusCR==0) {
+            tmpData += "<tr class='information'>";
+                tmpData += "<td>"+c.idC+"</td>";
+                tmpData += "<td>"+c.nomC+"</td>";
+                tmpData += "<td>"+c.prenomC+"</td>";
+                tmpData += "<td>"+c.emailC+"</td>";
+                tmpData += "<td>"+c.telC+"</td>";
+                tmpData += "<td>"+c.serieBacc+"</td>";
+                tmpData += "<td>"+c.centreExamC+"</td>";
+                tmpData += "<td>"+c.parcoursC+"</td>";
+                tmpData += "<td>"+c.dateEC+"</td>";
+                tmpData += "<td><button type='button' id="+c.idC+" class='btnDetails btnTable btn' data-details='"+c.idC+"'>Detaille</button></td>";
+            tmpData += "</tr>"; 
         }
-
             // for (const [key, value] of Object.entries(candidat)) 
             // {
             //     if (key == "nomC" ||key == "prenomC" ||key == "idC" ||key == "telC" ||key == "serieBacc" ||key == "MBacc" ||key == "centreExamC" ||key == "parcoursC" ||key == "dateEC" ||key == "emailC") {
@@ -128,15 +127,15 @@ function getsAllCandidat(data) {
     document.querySelectorAll('.btnDetails').forEach( btn => btn.addEventListener('click', ()=>{
         showDetailCandidat(btn.id);
         blockDetails()
-
     }));
 }
 
 function getsCandidatAccept(data) {
     let tmpData = "";
     data.forEach(c => {
-        if (c.statusC == 1) {
-                    tmpData += "<tr>";
+        const lenA = c.statusCA;
+        if (c.statusCA == 1) {
+                    tmpData += "<tr class='information'>";
                         tmpData += "<td>"+c.idC+"</td>";
                         tmpData += "<td>"+c.nomC+"</td>";
                         tmpData += "<td>"+c.prenomC+"</td>";
@@ -151,6 +150,48 @@ function getsCandidatAccept(data) {
                 }
             })
         document.querySelector(".demandeAccepter").innerHTML = tmpData;
+
+        document.querySelectorAll('.btnDetails').forEach( btn => btn.addEventListener('click', ()=>{
+            showDetailCandidat(btn.id);
+            blockDetails()
+        }));
+}
+
+function getsCandidatRejeter(data) {
+    let tmpData = "";
+    data.forEach(c => {
+        const lenR = c.length;
+        if (c.statusCR == 1) {
+            // console.log(lenR);
+                    tmpData += "<tr class='information'>";
+                        tmpData += "<td>"+c.idC+"</td>";
+                        tmpData += "<td>"+c.nomC+"</td>";
+                        tmpData += "<td>"+c.prenomC+"</td>";
+                        tmpData += "<td>"+c.emailC+"</td>";
+                        tmpData += "<td>"+c.telC+"</td>";
+                        tmpData += "<td>"+c.serieBacc+"</td>";
+                        tmpData += "<td>"+c.centreExamC+"</td>";
+                        tmpData += "<td>"+c.parcoursC+"</td>";
+                        tmpData += "<td>"+c.dateEC+"</td>";
+                        tmpData += "<td><button type='button' id="+c.idC+" class='btnDetails btnTable btn' data-details='"+c.idC+"'>Detaille</button></td>";
+                        tmpData += "<td><button style='width: 80%; background: red; margin: 0 auto' type='button' id="+c.idC+" class='btnRemoveCandidats btnTable btn' data-details='"+c.idC+"'>X</button></td>";
+                        // <img src=''></img>
+                    tmpData += "</tr>";
+                }
+            })
+        document.querySelector(".demandeRejeter").innerHTML = tmpData;
+
+        document.querySelectorAll('.btnDetails').forEach( btn => btn.addEventListener('click', ()=>{
+            showDetailCandidat(btn.id);
+            blockDetails()
+        }));
+
+        document.querySelectorAll('.btnRemoveCandidats').forEach( btn => btn.addEventListener('click', ()=>{
+            if (confirm("Confirmez-vous la suppression de ce candidtat ?")) {
+                supprimerCandidat(btn.id);
+            }
+            
+        }));
 }
 
 function getData(){
@@ -163,13 +204,13 @@ function getData(){
     ).then(
         response => {
             console.log(response);
-            getsCandidatAccept(response);
             getsAllCandidat(response);
+            getsCandidatAccept(response);
+            getsCandidatRejeter(response);
         }
     );
 
 } getData();
-
 //============================CANDIDATAT==============================
 
 
@@ -178,7 +219,7 @@ function printsDetailId(data, id){
     const d = data[0];
     document.querySelector(".container-formation").innerHTML = `
     <div class="cardRemove">
-        <h3>Infotmation Candidat ${id} </h3> 
+        <h3>Information Candidat ${id} </h3> 
         <h3 class="btnRemoveCard">X</h3>
     </div>
     <div class="content-candidat">
@@ -240,20 +281,28 @@ function printsDetailId(data, id){
     </div>
     <article class="buttonConfirme">
         <div>
-            <input type="checkbox" name="accepter" id="accepter" hidden>
+            <input type="radio" name="status" id="accepter" hidden>
             <label for="accepter" id=${id} class="acceptCandidat btn">Accepter</label>
         </div>   
+        <div>
+            <input type="radio" name="status" id="rejeter" hidden>
+            <label for="rejeter" id=${id} class="rejeterCandidat btn">Rejeter</label>
+        </div>   
     </article>
-    
     `
     
     document.querySelector('.btnRemoveCard').addEventListener("click", (e)=>{
         removeDetail(e.target);
     })
 
-    document.querySelector('.acceptCandidat').addEventListener("click", (e)=>{
-        acceptCandidat(e.target.id);
+    document.querySelectorAll('.buttonConfirme div label').forEach(b => {
+        b.addEventListener("click", (e)=>{
+            updateStatus(e.target.id, e.target.attributes);
+        })
     })
+    // document.querySelector('.acceptCandidat').addEventListener("click", (e)=>{
+    //     acceptCandidat(e.target.id);
+    // })
 
     // displayNoneAccept(document.querySelector('.acceptCandidat'))
         
@@ -281,27 +330,65 @@ function showDetailCandidat(p_id) {
         })
 }
 
-function acceptCandidat(p_id) {
-    let action = "acceptCandidat";
+function updateStatus(p_id, p_for ={}){
+    console.log("id=",p_id, " Status=", p_for[0].value,"\n");
+    let action = p_for[0].value;
     const url = `http://localhost/PROJET_JS_L2/ADMIN/controleurs/controlCandidat.php?action=${encodeURIComponent(action)}`;
     const data = new FormData();
     data.append("id", p_id);
+    
+        fetch(url, {
+            method: 'POST',
+            body: data
+        }).then(res =>{
+            if (!res.ok) {
+                throw new Error("Erreur lors de la requete");
+            }
 
-    fetch(url, {
-        method: 'POST',
-        body: data
-    }).then(res =>{
-        if (!res.ok) {
-            throw new Error("Erreur lors de la requete");
-        }
-
-        location.reload();
-        return res.json();
-    }).then(response => {
-        console.log(response)
-    }).catch(e => console.log("Erreur du serveur ou du resultat", {cause:e}))
+            location.reload();
+            return res.json();
+        }).then(response => {
+            console.log(response)
+            alert("Candidat", action);
+        }).catch(e => console.log("Erreur du serveur ou du resultat", {cause:e}))
 
 }
+
+function supprimerCandidat(p_id){
+    let action = "delete";
+    const formData = new FormData();
+    formData.append("id", p_id);
+
+    const url = `http://localhost/PROJET_JS_L2/ADMIN/controleurs/controlCandidat.php?action=${encodeURIComponent(action)}`;
+    fetch(url, {
+        method: 'POST',
+        contentType: false,
+        processData: false,
+        body: formData
+    }).then(response =>{
+       
+        if (!response.ok) {
+            throw new Error("Erreur lors de la requete")
+        }
+        console.log(response);
+        return response;
+        
+    }).then(data => {
+        getData();
+        console.log("reponse du serveur", data);   
+
+    }).catch(e => console.log("Erreur de serveur ",{cause:e}));
+}
+
+// function updateStatus(p_id, p_for ={}){
+//     console.log("id=",p_id, " Status=", ,"\n");
+//     const status = p_for[0].value;
+//     // if (status == "rejeter") {
+//     //     acceptCandidat(p_id);
+//     // } else {
+//     //     rejeterCandidat(p_id); 
+//     // }
+// }
 //===============SHOW DETAIL CANDIDAT===============
 
 

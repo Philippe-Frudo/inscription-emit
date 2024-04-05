@@ -1,6 +1,6 @@
-import { fetchJSON } from "./app.js";
-import { createElementE } from "./dom.js"
-import { TodoList } from "./TodoList.js";
+// import { fetchJSON } from "./app.js";
+// import { createElementE } from "./dom.js"
+// import { TodoList } from "./TodoList.js";
 
 let utilisateur = document.querySelector(".utilisateur");
 let clickProfile = document.querySelector(".clickProfile");
