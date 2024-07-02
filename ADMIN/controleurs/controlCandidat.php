@@ -6,6 +6,9 @@
     require_once("./../modules/modalCandidat.php");
     $candidat = new Candidat();
 
+    // $r = new Database2();
+    // echo $r;
+
     require_once("./../rootFiles/rootFiles.php");
 
     //ACTION REQUETE
@@ -17,6 +20,7 @@
     function getsData(){
         $candidat = new Candidat();
         $dbo = new Database2();
+        $val = "a";
         
         $resultat = $candidat->getsAllCandidats($dbo);
         print_r(json_encode($resultat));
@@ -42,6 +46,8 @@
         $sexe = $_POST['sexe'];
         $situationMatrimonial = $_POST['situationMatrimonial'];
         $tel = $_POST['tel'];
+
+        
         $imgAEC = $_FILES['imgAEC'];
         $imgDemande = $_FILES['imgDemande'];
         $imgDiplome = $_FILES['imgDiplome'];
@@ -149,17 +155,17 @@
     }
 
     //UPDATE STATUS CANDIDAT (ACCEPT)
-    elseif($action1 == "accepter"){
+    elseif($action1 == "acceptCandidat"){
         $idA = $_POST['id'];
         $resultat = $candidat->updateStatusaccepter($dbo, $id, 1);
-        echo json_encode(['status' => $resultat]);
+        echo $resultat;
     }
 
     //UPDATE STATUS CANDIDAT (REJETER)
-    elseif($action1 == "rejeter"){
+    elseif($action1 == "rejeterCandidat"){
         $idR = $_POST['id'];
         $resultat = $candidat->updateStatusRejeter($dbo, $idR, 1);
-        echo json_encode(['status' => $resultat]);
+        echo $resultat;
     }
     
     //DELETE CANDIDAT (REJETER)

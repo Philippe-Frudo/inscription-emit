@@ -23,4 +23,7 @@ class Database2
     }
 }
 
+new Database2();
+
+
 ?>

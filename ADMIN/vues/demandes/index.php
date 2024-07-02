@@ -1,5 +1,4 @@
 <?php 
-
 // LIENS FICHIERS
 require_once "../../rootFiles/rootFiles.php";
 ?>
@@ -101,7 +100,8 @@ require_once "../../rootFiles/rootFiles.php";
                     </div>
 
                     <div class="search">
-                        <input type="text" id="search-candidat" placeholder="Entrer le nom ou prenem">
+                        <input type="text" id="search-candidat"  placeholder="Entrer le valeur chercher">
+                        <!-- <input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."> -->
                     </div>
                 </div>
             </div>

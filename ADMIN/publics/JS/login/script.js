@@ -53,7 +53,7 @@ function dataAuthentification(){
         // console.log(res);
         return res.json();
     }).then(response =>{
-        // console.log(response);
+        console.log(response);
         const lenResponse = response.length;
         if (lenResponse > 0 ) {
             console.log("Connecter");

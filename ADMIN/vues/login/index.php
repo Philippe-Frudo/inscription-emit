@@ -1,4 +1,8 @@
 <?php 
+session_start();
+if (!$_SESSION == null) {
+    
+}
     // LIENS FICHIERS
     require_once "../../rootFiles/rootFiles.php";
 ?>

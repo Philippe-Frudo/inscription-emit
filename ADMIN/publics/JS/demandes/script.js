@@ -8,8 +8,6 @@ const buttonConfirme = document.querySelectorAll(".buttonConfirme");
 const btnTable = document.querySelectorAll(".btnTable");
 
 
-
-
 // DEMANDE ACTIVE
 const candidatNavs = document.querySelectorAll("div.candidat-nav span");
 function activeElement_tab(href){
@@ -19,11 +17,6 @@ function activeElement_tab(href){
         if (href === idValue) {
             id.parentElement.querySelectorAll(".block").forEach(node => node.classList.remove("block"));
             id.classList.add("block");
-            if (idValue == "candidat-accepter") {
-            //   function displayNoneAccept(){
-
-            //     }
-           }
         }
     })
 }
@@ -41,7 +34,6 @@ candidatNavs.forEach((el) => {
         }) 
 })
 
-
 function removeCard(btn){
     btn.addEventListener("click", ()=>{
         containerArticle.style.top = "-100%";
@@ -49,11 +41,32 @@ function removeCard(btn){
     });
 }
 
-
 function blockDetails(){
     containerArticle.style.top = "50%";
     divVide.style.display = "block";
 }
+
+document.querySelector("#search-candidat").addEventListener("keyup", my);
+function my(){
+    // alert();
+    let input, filter, table, tr, td, i, txtValue;
+    input = document.getElementById("search-candidat");
+    filter = input.value.toUpperCase();
+    table = document.getElementById("tab-accept");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+      td = tr[i].getElementsByTagName("td")[0];
+      if (td) {
+        txtValue = td.textContent || td.innerText;
+        console.log(txtValue);
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+          tr[i].style.display = "";
+        } else {
+          tr[i].style.display = "none";
+        }
+      }       
+    }
+  }
 
 
 // document.addEventListener('DOMContentLoaded', function() {
@@ -152,6 +165,7 @@ function getsCandidatAccept(data) {
         document.querySelector(".demandeAccepter").innerHTML = tmpData;
 
         document.querySelectorAll('.btnDetails').forEach( btn => btn.addEventListener('click', ()=>{
+
             showDetailCandidat(btn.id);
             blockDetails()
         }));
@@ -161,8 +175,8 @@ function getsCandidatRejeter(data) {
     let tmpData = "";
     data.forEach(c => {
         const lenR = c.length;
+        // console.log(lenR);
         if (c.statusCR == 1) {
-            // console.log(lenR);
                     tmpData += "<tr class='information'>";
                         tmpData += "<td>"+c.idC+"</td>";
                         tmpData += "<td>"+c.nomC+"</td>";
@@ -173,8 +187,8 @@ function getsCandidatRejeter(data) {
                         tmpData += "<td>"+c.centreExamC+"</td>";
                         tmpData += "<td>"+c.parcoursC+"</td>";
                         tmpData += "<td>"+c.dateEC+"</td>";
-                        tmpData += "<td><button type='button' id="+c.idC+" class='btnDetails btnTable btn' data-details='"+c.idC+"'>Detaille</button></td>";
-                        tmpData += "<td><button style='width: 80%; background: red; margin: 0 auto' type='button' id="+c.idC+" class='btnRemoveCandidats btnTable btn' data-details='"+c.idC+"'>X</button></td>";
+                        // tmpData += "<td><button type='button' id="+c.idC+" class='btnDetails btnTable btn' data-details='"+c.idC+"'>Detaille</button></td>";
+                        tmpData += "<td><button style='width: 80%; background: red; margin: 0 auto' type='button' id="+c.idC+" class='btnRemoveCandidats btnTable btn' "+c.idC+"'><img height='16px' src='../../publics/icon/remove.ico' alt=''></button></td>";
                         // <img src=''></img>
                     tmpData += "</tr>";
                 }
@@ -182,6 +196,8 @@ function getsCandidatRejeter(data) {
         document.querySelector(".demandeRejeter").innerHTML = tmpData;
 
         document.querySelectorAll('.btnDetails').forEach( btn => btn.addEventListener('click', ()=>{
+            // let containerSection = btn.parentElement.parentElement.parentElement.parentElement.parentElement.parentElement;
+            // let c = containerSection.id;
             showDetailCandidat(btn.id);
             blockDetails()
         }));
@@ -211,10 +227,42 @@ function getData(){
     );
 
 } getData();
+
+
+// const hiddenB = (c) =>{
+//     alert()
+//     return c;        
+// }
+
+// const buttonConfirmeB = (c) =>{
+//     return c;      
+// }
 //============================CANDIDATAT==============================
 
 
 //===============SHOW DETAIL CANDIDAT===============
+
+function showDetailCandidat(p_id) {
+    let action = "detailId";
+    const data = new FormData()
+    data.append("id", p_id);
+
+    const url = `http://localhost/PROJET_JS_L2/ADMIN/controleurs/controlCandidat.php?action=${encodeURIComponent(action)}`;
+    fetch(url, {
+        method: "POST",
+        body: data
+    }).then( res => {
+            if (!res.ok) {  
+                throw new Error("Erreur lors de la requete")
+            }
+            return res.json()
+        }
+    ).then(
+        response => {
+            printsDetailId(response, p_id);
+        })
+}
+
 function printsDetailId(data, id){
     const d = data[0];
     document.querySelector(".container-formation").innerHTML = `
@@ -280,11 +328,11 @@ function printsDetailId(data, id){
         </div>
     </div>
     <article class="buttonConfirme">
-        <div>
+        <div class="btnAccept">
             <input type="radio" name="status" id="accepter" hidden>
             <label for="accepter" id=${id} class="acceptCandidat btn">Accepter</label>
         </div>   
-        <div>
+        <div class="btnRejeter">
             <input type="radio" name="status" id="rejeter" hidden>
             <label for="rejeter" id=${id} class="rejeterCandidat btn">Rejeter</label>
         </div>   
@@ -293,46 +341,29 @@ function printsDetailId(data, id){
     
     document.querySelector('.btnRemoveCard').addEventListener("click", (e)=>{
         removeDetail(e.target);
-    })
-
-    document.querySelectorAll('.buttonConfirme div label').forEach(b => {
-        b.addEventListener("click", (e)=>{
-            updateStatus(e.target.id, e.target.attributes);
-        })
-    })
-    // document.querySelector('.acceptCandidat').addEventListener("click", (e)=>{
-    //     acceptCandidat(e.target.id);
+    });
+    
+    // document.querySelectorAll('.buttonConfirme div label').forEach(b => {
+    //     b.addEventListener("click", (e)=>{
+    //         console.log(e.target.id, e.target.attributes);
+    //         updateStatus(e.target.id, e.target.attributes);
+    //     })
     // })
+    document.querySelector('.acceptCandidat').addEventListener("click", (e)=>{
+        updateStatus(e.target.id, "acceptCandidat");
+    });
+    document.querySelector('.rejeterCandidat').addEventListener("click", (e)=>{
+        updateStatus(e.target.id, "rejeterCandidat");
+    });
 
     // displayNoneAccept(document.querySelector('.acceptCandidat'))
         
-
 }
 
-function showDetailCandidat(p_id) {
-    let action = "detailId";
-    const data = new FormData()
-    data.append("id", p_id);
 
-    const url = `http://localhost/PROJET_JS_L2/ADMIN/controleurs/controlCandidat.php?action=${encodeURIComponent(action)}`;
-    fetch(url, {
-        method: "POST",
-        body: data
-    }).then( res => {
-            if (!res.ok) {  
-                throw new Error("Erreur lors de la requete")
-            }
-            return res.json()
-        }
-    ).then(
-        response => {
-            printsDetailId(response, p_id);
-        })
-}
-
-function updateStatus(p_id, p_for ={}){
-    console.log("id=",p_id, " Status=", p_for[0].value,"\n");
-    let action = p_for[0].value;
+function updateStatus(p_id, p_for){
+    //console.log("id=",p_id, " Status=", p_for[0].value,"\n");
+    let action = p_for;
     const url = `http://localhost/PROJET_JS_L2/ADMIN/controleurs/controlCandidat.php?action=${encodeURIComponent(action)}`;
     const data = new FormData();
     data.append("id", p_id);
@@ -346,10 +377,10 @@ function updateStatus(p_id, p_for ={}){
             }
 
             location.reload();
-            return res.json();
+            return res;
         }).then(response => {
             console.log(response)
-            alert("Candidat", action);
+            //alert("Candidat", action);
         }).catch(e => console.log("Erreur du serveur ou du resultat", {cause:e}))
 
 }

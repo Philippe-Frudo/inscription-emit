@@ -14,8 +14,7 @@
 
 
 if ($actionU == "getCurrentUser") {
-    # code...
-}
+    
     $emailA = $_POST["emailConnection"];
     $codeA = $_POST["codeConnexion"];
 
@@ -27,6 +26,7 @@ if ($actionU == "getCurrentUser") {
     CurrentUser::$currentUser = $rv;
     
     echo $rv;
+}
     
     // getUserConnect($rv);
     // header("location:http://localhost/PROJET_JS_L2/ADMIN/vues/dashboard/index.php");

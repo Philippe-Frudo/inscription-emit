@@ -4,8 +4,8 @@
     <main class="padding">
                         <!-- =====================ERCHEBAR DE RECH================================= -->
                 
-                        <table>
-                            <thead>
+                        <table id="myTable">
+                        
                                 <tr>
                                     <th>N°</th>
                                     <th>Nom</th>
@@ -18,7 +18,7 @@
                                     <th>envoyer le</th>
                                     <th>Voir plus</th>
                                 </tr>
-                            </thead>
+                           
                             <tbody class="demandeAccepter">
                                     
                             </tbody>

@@ -73,13 +73,8 @@ export function alertChamps(champs){
 }
 
 
-//ALERT D'ENVOYE
-
-
-
 //REGEX
 export const regexEmail = (email)=>{
-    // return /^([a-z\d\-])@([a-z\d-]+)\([a-z]{2,8})(\[a-z]{2,8})?$/.test(email);
     // const regex /^[\w-\.]+@([\w-]+\.)]+[\w-]{2,4}$/.test(email);
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
@@ -96,8 +91,6 @@ export const regexPhone = (phone)=>{
     const regex = /^(034|038|032|033)\d{7}$/;
     return regex.test(phone);
 }
-//REGEX
-
 
 
 function inputNormal(val){
@@ -112,9 +105,6 @@ function inputsKeyup(k){
         })
     })
 }
-
-// inputsKeyup("#form-inscription input");
-// inputsKeyup("#form-inscription select");
 
 
 document.querySelector("#deconnexion").addEventListener("click", (e)=>{
