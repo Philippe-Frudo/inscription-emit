@@ -1,7 +1,7 @@
 <?php
     //IMPORT CLASS DATABASE
-    require_once("./../../Database/database2.php");
-    $dbo = new Database2();
+    require_once("./../../Database/database.php");
+    $dbo = new Database();
     
     require_once("./../modules/modelParcours.php");
     $parcours = new Parcours();

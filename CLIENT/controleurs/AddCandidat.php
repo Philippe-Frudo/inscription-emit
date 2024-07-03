@@ -1,5 +1,5 @@
 <?php
-    require_once "./../../../Database/database.php";
+     require_once("./../../Database/database.php");
 
     class AddCandidat
     {
@@ -7,7 +7,7 @@
 
         public function __construct() 
         {
-            $this->db = new ConnexionDB();
+            $this->db = new Database();
         }
         
         //AJOUT CANDIDAT
