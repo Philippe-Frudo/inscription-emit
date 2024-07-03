@@ -4,22 +4,6 @@
 
     class Candidat {
 
-        //SELECT ALL STUDENTS
-        // , $nom, $prenom, $sexe, $nation, $mention
-        // WHERE  
-        // nom_cand= regexp(':nom') || 
-        // prenom_cand= regexp(':prenom') ||
-        // sexe= regexp(':sexe') || 
-        // nationalite=regexp(':nation')|| 
-        // mention_BACC=regexp(':mention') ||
-        // num_inscript_BACC=regexp(':n_inscri')
-        // [        
-        //     ":nom"=>$nom,
-        //     ":prenom"=>$prenom,
-        //     ":sexe"=>$sexe,
-        //     ":nation"=>$nation,
-        //     ":mention_BACC"=>$mention
-        // ]
         public function getsAllCandidats($dbo){
             $cmd = "SELECT 
                 id_cand as idC,

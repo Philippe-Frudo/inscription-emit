@@ -1,10 +1,6 @@
 <?php
-    // //IMPORT CLASS DATABASE
-    // require_once("./../../Database/database2.php");
-
     class Utilisateur{
 
-        // public $codeA;
         //GETS DATA USER
         public function getsUtilisateur($dbo){
             $cmd = "SELECT idU, nomU, prenomU, emailU, telU, adresseU, photoU, sexeU FROM utilisateur";
@@ -100,24 +96,15 @@
             $cmd = "DELETE  FROM utilisateur WHERE idU=:idU";
             $query = $dbo->conn->prepare($cmd);
 
-
             try {
                 $query->execute([":idU"=>$idU]);
-                // $number = $query->fetchAll(PDO::FETCH_ASSOC);
-                // return $number;
-
                 return 1;
 
             } catch (Exception $e) {
                 $e->getMessage();
-
                 return 0;
             }
         }
- 
-        // public function authentifier( $dbo, $emailA, codeA ) {
-           
-        // }
 
         //AUTHENTIFIE USER
         public function authentifier($dbo, $emailA, $codeA){
@@ -135,13 +122,6 @@
             $resultat = $query->fetchAll(PDO::FETCH_ASSOC);
 
             return $resultat;
-
-            // if (mysqli_num_rows($resultat) > 0 ) {
-            //     return 1;
-            // } else {
-            //     return 0;
-            // }
-
         }
 
     }

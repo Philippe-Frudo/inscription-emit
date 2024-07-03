@@ -1,7 +1,6 @@
 <?php
-    //IMPORT CLASS DATABASE
+    //Importation de la  Base de donnée
     require_once "./../../../Database/Database.php";
-
     class AddUser {
 
         public $db;
@@ -35,10 +34,7 @@
                 $erreur = "Le champ ne doit pas etre vide";
                 return $erreur;
             }
-            // elseif(filter_var($emailU, FILTER_VALIDATE_EMAIL)){
-            //     $erreur = "L'email n'est pas valide";
-            //     return $erreur;
-            // }
+
             elseif($imgU_size > 1048567){
                 $erreur = "La taille de fichier ne doit pas superieur 1 Mo";
                 return $erreur;
@@ -54,12 +50,9 @@
                 $query = "INSERT INTO `utilisateur`(`nomU`, `prenomU`, `emailU`, `telU`, `codeU`, `adresseU`, `photoU`) VALUES 
                                         ('$nomU', '$prenomU', '$emailU', '$telU', '$codeU', '$adresseU', '$upload_imgU')";
 
-
                 $resultat = $this->db->insertUtilisateur($query);
 
                 if ($resultat) {
-                    //Actualiser la page 
-                    // header("location:../../../vues/utilisateur/otherUser.php");
                     $erreur = "L'insertion des donnees est succes ";
                     return $erreur ;
 

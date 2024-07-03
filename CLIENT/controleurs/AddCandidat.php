@@ -100,10 +100,7 @@
                 $erreur = "Le champs ne doit pas etre vide";
                 return $erreur;
             }
-            // elseif(filter_var($email, FILTER_VALIDATE_EMAIL)){
-            //     $erreur = "Email n'est pas valide";
-            //     return $erreur;
-            // }
+    
             elseif($file_size_imgPayment > 1048567 ||
                     $file_size_imgFiche > 1048567 ||
                     $file_size_imgDemande > 1048567 ||
@@ -141,10 +138,6 @@
                 $resultat = $this->db->insertCandidat($query);
                 
                 if ($resultat) {
-                    
-                    //Actualiser la page demender
-                    // header("location:../../../ADMIN/vues/demandes/index.php");
-
                     $erreur = "L'insertion des donnees est succes ";
                     return $erreur;
 

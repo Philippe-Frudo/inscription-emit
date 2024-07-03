@@ -6,6 +6,5 @@
     require_once("./../modules/modalVille.php");
     $ville = new Ville();
         
-
     $resultat = $ville->getsVilles($dbo);
     echo json_encode($resultat);

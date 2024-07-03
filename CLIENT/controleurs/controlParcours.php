@@ -6,6 +6,5 @@
     require_once("./../modules/modelParcours.php");
     $parcours = new Parcours();
         
-
-        $resultat = $parcours->getsParcours($dbo);
-        echo json_encode($resultat);
+    $resultat = $parcours->getsParcours($dbo);
+    echo json_encode($resultat);

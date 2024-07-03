@@ -1,7 +1,6 @@
 <?php
-    //IMPORT CLASS DATABASE
+    //Importation de la  Base de donnée
     require_once("./../../Database/database2.php");
-    
     class Ville{
 
         public function getsVilles($dbo){
